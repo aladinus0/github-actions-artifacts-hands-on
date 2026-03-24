@@ -24,7 +24,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps: 
-    - name: Archive text file
+    - name: download file
       uses: actions/download-artifact@v4
       with:
         name: hello-artifact
+        path: ./artifact/hello.txt
+
+    - name: Print
+      run: cat hello.txt
